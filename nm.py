@@ -33,3 +33,9 @@ def get_description_for_type(type_letter):
 		return __descriptions[type_letter]
 	except:
 		return "Unknown symbol"
+
+def get_ram_symbols():
+	return ['B', 'b', 'D', 'd']
+
+def get_flash_symbols():
+	return ['T', 't']

@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title>{{profiler.filename}}</title>
+</head>
+<body>
+	<h1>Processed nm output for {{profiler.path}}</h1>
+	<h2>Generated on {{ profiler.date }} at {{ profiler.time }}</h2>
+
+	<h3>Largest 10 RAM objects:</h3>
+	{{ profiler.html_table(nm.get_ram_symbols(), 10) }}
+	</p>
+	<p>
+	<h3>Largest 10 flash objects:</h3>
+	{{ profiler.html_table(nm.get_flash_symbols(), 10) }}
+	</p>
+</body>
+</html>
