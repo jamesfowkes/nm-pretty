@@ -7,11 +7,17 @@
 	<h2>Generated on {{ profiler.date }} at {{ profiler.time }}</h2>
 
 	<h3>Largest 10 RAM objects:</h3>
+	<p>
 	{{ profiler.html_table(nm.get_ram_symbols(), 10) }}
 	</p>
-	<p>
+
+	<h3>Total RAM Usage {{profiler.get_ram_total_size()}}B</h3>
+
 	<h3>Largest 10 flash objects:</h3>
+	<p>
 	{{ profiler.html_table(nm.get_flash_symbols(), 10) }}
 	</p>
+
+	<h3>Total Flash Usage {{profiler.get_flash_total_size()}}B</h3>
 </body>
 </html>

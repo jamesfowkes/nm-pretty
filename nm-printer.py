@@ -78,6 +78,14 @@ class Profiler:
 	def sorted_types(self):
 		return self.type_sizes
 
+	def get_ram_total_size(self):
+		ram_sizes = [v for k, v in self.type_sizes if k in nm.get_ram_symbols()]
+		return sum(ram_sizes)
+
+	def get_flash_total_size(self):
+		flash_sizes = [v for k, v in self.type_sizes if k in nm.get_flash_symbols()]
+		return sum(flash_sizes)
+
 	@property
 	def filename(self):
 	    return os.path.basename(self.full_path)
