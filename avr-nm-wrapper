@@ -1,2 +1,2 @@
 # Provides a wrapper around avr-nm so that Arduino recipes can use it
-avr-nm --size-sort --demangle $1 > $2
+avr-nm --size-sort -r --demangle $1 > $2
