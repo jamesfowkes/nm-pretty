@@ -1,9 +1,20 @@
 #!/usr/bin/python3
 
+""" Utility to pretty up the output from nm
+
+Usage:
+	nm-printer.py <in_filename> <out_filename>
+
+Options:
+	in_filename    File to read from
+	out_filename   HTML File to write to
+"""
+
 import sys
 import os
 import datetime
 import operator
+import docopt
 
 from jinja2 import Environment, PackageLoader
 
@@ -95,7 +106,9 @@ def parse_file(fname):
 		
 if __name__ == "__main__":
 
-	html = parse_file(sys.argv[1])
+	args = docopt.docopt(__doc__)
 
-	with open(sys.argv[2], 'w') as f:
+	html = parse_file(args["<in_filename>"])
+
+	with open(args["<out_filename>"], 'w') as f:
 		f.write(html)
